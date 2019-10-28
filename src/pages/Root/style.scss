@@ -1,0 +1,17 @@
+#pg_root {
+  min-height: 100%;
+  display: grid;
+  // grid-template-rows: auto 1fr;
+  > .loading {
+    @extend %set-fixed-full;
+    background-color: $maskColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 102;
+  }
+}
+
+// $desktopHD | $desktop | $tablet | $mobile
+// @include devicepoint($desktopHD) {
+// }

@@ -1,0 +1,94 @@
+@import 'normalize';
+@import 'util';
+@import 'transition';
+@import 'init';
+@import 'grid';
+
+html,
+body {
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: $darkColor;
+  background-color: #e9ebee;
+  font-family: 'Microsoft JhengHei', 'Apple LiGothic Medium', 'PMingLiU',
+    'sans-serif', 'serif';
+  font-size: 10px;
+  will-change: scroll-position;
+}
+
+a {
+  text-decoration: none;
+}
+body.active {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.grid_row {
+  @include container($mainWidth);
+}
+
+@for $i from 1 through $columns {
+  .col_#{$i} {
+    @include span($i);
+  }
+}
+
+@each $key, $value in $breakpoint {
+  @include susy-breakpoint($value) {
+    @for $i from 1 through $columns {
+      .col_#{$i} {
+        @include span($i);
+      }
+    }
+  }
+}
+
+@each $key, $value in $breakpoint {
+  @include susy-breakpoint($value) {
+    @for $i from 1 through $columns {
+      .#{$key}_#{$i} {
+        @include span($i);
+      }
+    }
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+figure,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $darkColor;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+textarea {
+  color: $darkColor;
+}
+
+.cus_content {
+  img {
+    max-width: 100%;
+  }
+}

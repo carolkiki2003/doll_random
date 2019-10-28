@@ -1,0 +1,11 @@
+<div class="cp_input_box ut_input">
+  <input
+    :style="customStyle"
+    :value="value"
+    :placeholder="placeholder"
+    @input="$emit('input', $event.target.value.trim())"
+    @change="$emit('input', $event.target.value.trim())"
+    @keyup.enter="keyup"
+    :disabled="disabled"
+  />
+</div>

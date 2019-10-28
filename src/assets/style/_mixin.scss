@@ -1,0 +1,34 @@
+// 多行點點點
+@mixin text-overflow($line: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+@mixin font($level: 1, $line-height: auto) {
+  $size: font($level);
+  $line: rhythm($size);
+
+  font-size: $size;
+  @if $line-height == auto or $line-height < $line {
+    line-height: $line;
+  } @else {
+    line-height: $line-height;
+  }
+}
+@mixin position-center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+// 斷點 media query
+@mixin devicepoint($device) {
+  @include breakpoint(max-width $device) {
+    @content;
+  }
+}

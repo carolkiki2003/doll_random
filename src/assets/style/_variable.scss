@@ -1,0 +1,82 @@
+// color kit : DON'T USE IN STYLE!!!
+$colors: (
+  primary: #295588,
+  secondary: #e2a807,
+  danger: #a53635,
+  warning: #e8792e,
+  info: #2ba5d0,
+  success: #41937f
+);
+$columns: 24;
+$susy: (
+  'columns': susy-repeat($columns),
+  'gutters': 0.25,
+  'debug': false,
+  'container-spread': 'wide',
+  'svg-grid-colors': hsla(180, 40%, 60%, 0.5)
+);
+$devices: (
+  desktopHD: 1200px,
+  desktop: 960px,
+  tablet: 768px,
+  mobile: 480px
+);
+$desktopHD: map-get($devices, desktopHD);
+$desktop: map-get($devices, desktop);
+$tablet: map-get($devices, tablet);
+$mobile: map-get($devices, mobile);
+$breakpoint: (
+  pc:
+    map-merge(
+      $susy,
+      (
+        'max-width': $desktopHD,
+        'gutters': 20px
+      )
+    ),
+  pad:
+    map-merge(
+      $susy,
+      (
+        'max-width': $tablet,
+        'gutters': 20px
+      )
+    ),
+  mobile:
+    map-merge(
+      $susy,
+      (
+        'max-width': $mobile,
+        'gutters': 20px
+      )
+    )
+);
+
+$mainWidth: 1200px;
+$baseSize: 12px;
+$baseLineSize: 10px;
+$sizeLevel: 4px;
+$paddingLevel: 1.2;
+$lightLevel: 10%;
+$darkLevel: 10%;
+
+$lightColor: #f9f9f9;
+$darkColor: #474747;
+$white: #ffffff;
+$black: #000000;
+$maskColor: rgba($black, 0.5);
+
+$primary: adjust-color(map-get($colors, primary), $lightness: $lightLevel);
+$secondary: adjust-color(map-get($colors, secondary), $lightness: $lightLevel);
+$danger: adjust-color(map-get($colors, danger), $lightness: $lightLevel);
+$warning: adjust-color(map-get($colors, warning), $lightness: $lightLevel);
+$info: adjust-color(map-get($colors, info), $lightness: $lightLevel);
+$success: adjust-color(map-get($colors, success), $lightness: $lightLevel);
+
+$desktopHD: map-get($devices, desktopHD);
+$desktop: map-get($devices, desktop);
+$tablet: map-get($devices, tablet);
+$mobile: map-get($devices, mobile);
+
+$set-shadow: 0 5px 15px rgba($black, 0.07);
+$set-radius: 3px;

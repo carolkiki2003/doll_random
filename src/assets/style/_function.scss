@@ -1,0 +1,36 @@
+// color
+@function light($color) {
+  @return adjust-color($color, $lightness: $lightLevel * 2);
+}
+@function dark($color) {
+  @return adjust-color($color, $lightness: $lightLevel * -1);
+}
+@function grayscale($level: 1) {
+  @if $level <= 1 {
+    @return $lightColor;
+  } @else if $level >= 5 {
+    @return $darkColor;
+  } @else {
+    @return adjust-color(
+    $darkColor,
+    $lightness: $lightLevel * (5 - $level) * 2
+    );
+  }
+}
+
+// font
+@function font($level: 0) {
+  @if $level < 0 {
+    $level: 0;
+  }
+  @return $baseSize + $sizeLevel * round($level);
+}
+@function rhythm($size) {
+  @return ceil($size * $paddingLevel / $baseLineSize) * $baseLineSize;
+}
+@function line($level: 1) {
+  // @if $level < 1 {
+  //   $level: 1;
+  // }
+  @return $baseLineSize * round($level);
+}

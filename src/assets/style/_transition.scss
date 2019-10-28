@@ -1,0 +1,199 @@
+%transparent {
+  opacity: 0;
+}
+
+%transparent-active {
+  transition: opacity 0.5s ease;
+}
+
+// mask
+.mask-enter,
+.mask-leave-to {
+  @extend %transparent;
+
+  transform: scale(1.2);
+}
+
+.mask-enter-to,
+.mask-leave {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.mask-enter-active,
+.mask-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+// fade
+.fade-enter,
+.fade-leave-to {
+  @extend %transparent;
+}
+
+.fade-enter-to,
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  @extend %transparent-active;
+}
+
+// fadeInY
+.fadeInY-enter,
+.fadeInY-leave-to {
+  @extend %transparent;
+  transform: translateY(20px);
+}
+
+.fadeInY-enter-to,
+.fadeInY-leave {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeInY-enter-active,
+.fadeInY-leave-active {
+  transition: all 0.5s ease;
+}
+
+@keyframes press {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  25% {
+    height: 0;
+    width: 7px;
+  }
+  50% {
+    height: 11px;
+    width: 7px;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInY {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineW {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes lineH {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes barberpole {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 30px;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-up-enter-active {
+  transition: all 0.2s ease;
+}
+.slide-up-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-up-enter,
+.slide-up-leave-to {
+  transform: translateY(100vh);
+  opacity: 0;
+}

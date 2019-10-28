@@ -1,0 +1,327 @@
+@import 'init';
+
+%full {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.message {
+  color: $darkColor;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 50px 0px;
+  width: 100%;
+}
+
+// h1 ~ h6 字型大小
+@for $i from 1 through 6 {
+  $size: 2.75rem - 0.25 * $i;
+  h#{$i},
+  .ut_h#{$i} {
+    font-size: $size;
+    line-height: $size * 2 - $size / 2;
+    margin: 0;
+  }
+}
+
+// 文字排列
+.ut_tl {
+  text-align: left;
+}
+
+.ut_tc {
+  text-align: center;
+}
+
+.ut_tr {
+  text-align: right;
+}
+
+// 定位
+.ut_full {
+  @extend %full;
+}
+
+.ut_fixed_full {
+  @extend %full;
+  position: fixed;
+}
+
+.ut_abs_full {
+  @extend %full;
+  position: absolute;
+}
+
+.ut_abs_cn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.ut_abs_tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ut_abs_tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ut_abs_bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.ut_abs_br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+// 圓角
+.ut_br {
+  border-radius: $set-radius;
+}
+
+// 陰影
+.ut_bs {
+  box-shadow: $set-shadow;
+}
+
+.ut_bs_br {
+  box-shadow: $set-shadow;
+  border-radius: $set-radius;
+}
+
+// flex 置中
+.ut_flex_c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ut_flex_xc {
+  display: flex;
+  justify-content: center;
+}
+
+.ut_flex_yc {
+  display: flex;
+  align-items: center;
+}
+
+.ut_word_br {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+// 背景
+.ut_bg_pos {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// select
+.ut_select {
+  width: 100%;
+  background-color: $white;
+  border: 1px solid grayscale(2);
+  border-radius: $set-radius;
+  font-size: 14px;
+  line-height: 35px;
+  height: 35px;
+  position: relative;
+  cursor: pointer;
+  > select {
+    appearance: none;
+    position: relative;
+    padding: 0 30px 0 10px;
+    color: $darkColor;
+    color: rgba($darkColor, 0);
+    text-shadow: 0 0 0$darkColor;
+    border-radius: $set-radius;
+    background-color: $white;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    &:disabled {
+      color: $darkColor;
+      background-color: grayscale(1);
+      cursor: not-allowed;
+    }
+    &:focus {
+      outline: none;
+    }
+    > option {
+      color: $darkColor;
+      &:disabled {
+        color: grayscale(3);
+      }
+    }
+  }
+  > select::-ms-expand {
+    display: none;
+  }
+  > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    border-left: 1px solid grayscale(2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+}
+
+// input
+.ut_input {
+  border: 1px solid grayscale(2);
+  height: 35px;
+  width: 100%;
+  border-radius: $set-radius;
+  > input {
+    padding: 0 10px;
+    color: $darkColor;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: $set-radius;
+    background-color: $white;
+    font-size: 14px;
+    line-height: 35px;
+    &::placeholder {
+      color: grayscale(3);
+    }
+    &:disabled {
+      color: $darkColor;
+      background-color: grayscale(1);
+      cursor: not-allowed;
+    }
+  }
+}
+
+// 常見問答 | 隱私權政策 | 會員條款 | 服務條款
+.ut_about_page {
+  background-color: $lightColor;
+  border-radius: $set-radius;
+  box-shadow: $set-shadow;
+  padding: 30px;
+  margin: 10px 0;
+  > .title {
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  > .text {
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+  .block {
+    + .block {
+      margin-top: 60px;
+    }
+    > h3 {
+      display: inline-block;
+      font-size: 18px;
+      line-height: 20px;
+      color: $lightColor;
+      background-color: $primary;
+      padding: 10px 10px 10px 20px;
+      transform: translate3d(-40px, 0, 0);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      position: relative;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+      }
+      &:before {
+        border-width: 5px;
+        border-color: transparent dark($primary) dark($primary) transparent;
+        top: -10px;
+        left: 0;
+      }
+      &:after {
+        top: 50%;
+        right: -35px;
+        transform: translate3d(0, -50%, 0);
+        border-width: 20px;
+        border-color: $primary transparent $primary $primary;
+      }
+    }
+    > div {
+      + div {
+        margin-top: 40px;
+      }
+      > .title {
+        color: $primary;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+      > .description {
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+      > .text {
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 1px;
+        > a {
+          color: $primary;
+          text-decoration: underline;
+        }
+      }
+      > .list {
+        list-style: decimal;
+        padding-left: 40px;
+        > li {
+          font-size: 16px;
+          line-height: 30px;
+          letter-spacing: 1px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+// $desktopHD | $tablet | $mobile
+@include devicepoint($desktopHD) {
+  .ut_about_page {
+    padding: 15px;
+    .block {
+      > h3 {
+        transform: translate3d(-25px, 0, 0);
+      }
+    }
+  }
+}

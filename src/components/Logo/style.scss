@@ -1,0 +1,118 @@
+.cp_logo {
+  width: 100%;
+  height: 100%;
+  > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    > h1 {
+      display: block;
+      width: 100%;
+      height: 0;
+      padding-top: 38%;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    &:before,
+    &:after {
+      content: '';
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      position: absolute;
+    }
+  }
+  &.logo_b {
+    > a {
+      > h1 {
+        background-image: url('./images/logo_b1.svg');
+      }
+      &:before {
+        background-image: url('./images/logo_b2.svg');
+      }
+      &:after {
+        background-image: url('./images/logo_b3.svg');
+      }
+    }
+  }
+  &.logo_w {
+    > a {
+      > h1 {
+        background-image: url('./images/logo_w1.svg');
+      }
+      &:before {
+        background-image: url('./images/logo_w2.svg');
+      }
+      &:after {
+        background-image: url('./images/logo_w3.svg');
+      }
+    }
+  }
+  &.logo_s3 {
+    > a {
+      padding-bottom: 35%;
+      &:before {
+        width: 100%;
+        height: 19%;
+        top: 63%;
+        left: 0;
+      }
+      &:after {
+        width: 100%;
+        height: 14%;
+        top: 87%;
+        left: 0;
+      }
+    }
+  }
+  &.logo_h {
+    > a {
+      padding-right: 50%;
+      &:before {
+        width: 46%;
+        height: 38%;
+        top: 28%;
+        right: 0%;
+      }
+      &:after {
+        width: 46%;
+        height: 28%;
+        top: 71%;
+        right: 0%;
+      }
+    }
+  }
+  &.logo_s2 {
+    > a {
+      padding-bottom: 22%;
+      &:before {
+        width: 100%;
+        height: 25%;
+        top: 76%;
+        left: 0;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &.logo_o {
+    > a {
+      &:before {
+        display: none;
+      }
+      &:after {
+        width: 55%;
+        height: 16%;
+        top: 2%;
+        right: 0%;
+      }
+    }
+  }
+}
+
+// $desktopHD | $desktop | $tablet | $mobile
+// @include devicepoint($desktopHD) {}

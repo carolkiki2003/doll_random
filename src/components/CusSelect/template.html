@@ -1,0 +1,13 @@
+<div class="cp_cus_select ut_select">
+  <select
+    :value="value"
+    @change="$emit('input', $event.target.value.trim())"
+    :disabled="disabled"
+  >
+    <option value="請選擇" disabled>請選擇</option>
+    <option v-for="option in options" :value="option.value">{{
+      option.name
+    }}</option>
+  </select>
+  <div><i class="fas fa-angle-down"></i></div>
+</div>

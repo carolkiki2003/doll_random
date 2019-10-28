@@ -1,0 +1,137 @@
+.cp_footer {
+  background-color: $black;
+  padding-top: 50px;
+  > div {
+    justify-content: space-between;
+    > .left {
+      padding: 0px 20px;
+      > figure {
+        margin-bottom: 40px;
+        padding-top: 15%;
+        width: 40%;
+        position: relative;
+        > div {
+          position: absolute;
+          top: 0;
+        }
+      }
+      > figcaption {
+        color: grayscale(3);
+        font-size: 12px;
+        line-height: 25px;
+        letter-spacing: 2px;
+      }
+    }
+    > .right {
+      display: flex;
+      padding: 0px 10px;
+      > div {
+        > h3 {
+          color: grayscale(2);
+          margin: 0 0 10px 0;
+          font-size: 14px;
+          line-height: 25px;
+          font-weight: bolder;
+          letter-spacing: 1px;
+        }
+        > ul {
+          > li {
+            + li {
+              margin-top: 5px;
+            }
+          }
+          a {
+            display: inline-block;
+            font-size: 12px;
+            line-height: 25px;
+            color: grayscale(4);
+            letter-spacing: 1px;
+            background-color: transparent;
+            transition: all 0.3s;
+            padding: 0 5px;
+            &:hover {
+              color: grayscale(5);
+              background-color: grayscale(1);
+            }
+          }
+        }
+      }
+    }
+    > footer {
+      color: grayscale(4);
+      font-size: 12px;
+      line-height: 25px;
+      padding: 10px 0;
+      letter-spacing: 2px;
+      border-top: 1px solid rgba($lightColor, 0.1);
+      margin-top: 50px;
+    }
+  }
+}
+
+// $desktopHD | $tablet | $mobile
+@include devicepoint($desktopHD) {
+  .cp_footer {
+    > div {
+      > .right {
+        > div {
+          > ul {
+            a {
+              &:hover {
+                color: grayscale(4);
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include devicepoint($tablet) {
+  .cp_footer {
+    > div {
+      > .left {
+        > figure {
+          margin-bottom: 20px;
+          padding-top: 9%;
+          width: 24%;
+        }
+      }
+      > .right {
+        flex-wrap: wrap;
+        padding-top: 20px;
+        margin-top: 20px;
+        border-top: 1px solid rgba($lightColor, 0.1);
+        > div {
+          + div {
+            margin-top: 30px;
+          }
+          > ul {
+            display: flex;
+            flex-wrap: wrap;
+            > li {
+              + li {
+                margin-top: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include devicepoint($mobile) {
+  .cp_footer {
+    > div {
+      > .left {
+        > figure {
+          width: 37%;
+          padding-top: 14%;
+        }
+      }
+    }
+  }
+}

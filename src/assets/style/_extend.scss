@@ -1,0 +1,96 @@
+%indent {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+}
+
+%decoration {
+  display: block;
+  text-decoration: none;
+}
+
+%block {
+  width: 100%;
+  max-width: $mainWidth;
+  margin: 0 auto;
+}
+
+%vertical-outer {
+  &:before {
+    content: '';
+    display: inline-block;
+    visibility: hidden;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+%vertical-inner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+%text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+%set-fixed-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+%set-light-box {
+  flex-direction: column;
+  overflow: hidden;
+  > .modal-header {
+    flex: 0 0 25px;
+    padding: 10px 10px 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    > .btn-close {
+      width: 16px;
+      height: 16px;
+      color: $darkColor;
+      font-size: 16px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  > .modal-body {
+    overflow-y: auto;
+    flex: 1 1 auto;
+    > footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: $lightColor;
+      box-sizing: border-box;
+      padding: 5px;
+      border-top: 1px solid grayscale(2);
+      border-radius: 0 0 $set-radius $set-radius;
+      display: flex;
+      justify-content: center;
+      max-height: 45px;
+      > .cp_cus_button {
+        max-width: 150px;
+        + .cp_cus_button {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<div class="cp_footer">
+  <div class="grid_row">
+    <div class="left col_10 pad_24">
+      <figure>
+        <Logo class="logo_w logo_o"></Logo>
+      </figure>
+      <figcaption>Star 是一個天賦探索平台。<br />我們認為每個孩子都可以活出自己的天賦，過精彩的人生。但追尋天賦的過程，是需要不斷探索與嘗試的。
+      </figcaption>
+    </div>
+    <div class="right col_13 pad_24">
+      <div
+        class="col_8 pad_24"
+        v-for="(link, idx) in links"
+        :key="idx"
+      >
+        <h3>{{ link.title }}</h3>
+        <ul>
+          <li
+            v-for="item in link.content"
+            :key="item.name"
+            class="pad_6 mobile_12"
+          >
+            <a
+              :href="item.href"
+              class="ut_br"
+              target="star"
+            >{{ item.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <footer class="col_24 ut_tc">Star © 2018 建議使用 Chrome 瀏覽器</footer>
+  </div>
+</div>

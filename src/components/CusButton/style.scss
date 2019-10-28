@@ -1,0 +1,104 @@
+.cp_cus_button {
+  @include text-overflow(1);
+  height: 35px;
+  font-size: 14px;
+  line-height: 35px;
+  color: $lightColor;
+  border-radius: $set-radius;
+  background-color: $primary;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: background-color 0.3s;
+  &.primary {
+    background-color: $primary;
+    &:hover {
+      background-color: dark($primary);
+    }
+  }
+  &.secondary {
+    background-color: $secondary;
+    &:hover {
+      background-color: dark($secondary);
+    }
+  }
+  &.danger {
+    background-color: $danger;
+    &:hover {
+      background-color: dark($danger);
+    }
+  }
+  &.warning {
+    background-color: $warning;
+    &:hover {
+      background-color: dark($warning);
+    }
+  }
+  &.info {
+    background-color: $info;
+    &:hover {
+      background-color: dark($info);
+    }
+  }
+  &.success {
+    background-color: $success;
+    &:hover {
+      background-color: dark($success);
+    }
+  }
+  &.disabled {
+    color: grayscale(4);
+    background-color: grayscale(2);
+    cursor: not-allowed;
+  }
+  &.cancel {
+    color: $darkColor;
+    background-color: grayscale(2);
+    &:hover {
+      color: $lightColor;
+      background-color: grayscale(3);
+    }
+  }
+}
+
+// $desktopHD | $desktop | $tablet | $mobile
+@include devicepoint($desktop) {
+  .cp_cus_button {
+    &.primary {
+      &:hover {
+        background-color: $primary;
+      }
+    }
+    &.secondary {
+      &:hover {
+        background-color: $secondary;
+      }
+    }
+    &.danger {
+      &:hover {
+        background-color: $danger;
+      }
+    }
+    &.warning {
+      &:hover {
+        background-color: $warning;
+      }
+    }
+    &.info {
+      &:hover {
+        background-color: $info;
+      }
+    }
+    &.success {
+      &:hover {
+        background-color: $success;
+      }
+    }
+    &.cancel {
+      &:hover {
+        color: $darkColor;
+        background-color: grayscale(2);
+      }
+    }
+  }
+}
