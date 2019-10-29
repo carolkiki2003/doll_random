@@ -1,0 +1,107 @@
+[
+  {
+    "mainType": "A",
+    "mediumType": "02",
+    "item": "0200001",
+    "permission": 0,
+    "color": [
+      { "id": "11" },
+      { "id": "12" },
+      { "id": "13" },
+      { "id": "14" },
+      { "id": "15" }
+    ],
+    "layer": [{ "id": "11" }, { "id": "23" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "02",
+    "item": "0200002",
+    "permission": 0,
+    "color": [
+      { "id": "11" },
+      { "id": "12" },
+      { "id": "13" },
+      { "id": "14" },
+      { "id": "15" }
+    ],
+    "layer": [{ "id": "11" }, { "id": "23" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "02",
+    "item": "0200003",
+    "permission": 0,
+    "color": [
+      { "id": "11" },
+      { "id": "12" },
+      { "id": "13" },
+      { "id": "14" },
+      { "id": "15" }
+    ],
+    "layer": [{ "id": "11" }, { "id": "23" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "02",
+    "item": "0200004",
+    "permission": 0,
+    "color": [
+      { "id": "11" },
+      { "id": "12" },
+      { "id": "13" },
+      { "id": "14" },
+      { "id": "15" }
+    ],
+    "layer": [{ "id": "11" }, { "id": "23" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "02",
+    "item": "0200005",
+    "permission": 0,
+    "color": [
+      { "id": "11" },
+      { "id": "12" },
+      { "id": "13" },
+      { "id": "14" },
+      { "id": "15" }
+    ],
+    "layer": [{ "id": "11" }, { "id": "23" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "02",
+    "item": "0200006",
+    "permission": 0,
+    "color": [
+      { "id": "11" },
+      { "id": "12" },
+      { "id": "13" },
+      { "id": "14" },
+      { "id": "15" }
+    ],
+    "layer": [{ "id": "11" }, { "id": "23" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "02",
+    "item": "0200007",
+    "permission": 0,
+    "color": [
+      { "id": "11" },
+      { "id": "12" },
+      { "id": "13" },
+      { "id": "14" },
+      { "id": "15" }
+    ],
+    "layer": [{ "id": "11" }, { "id": "23" }],
+    "name": null
+  }
+]

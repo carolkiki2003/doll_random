@@ -1,0 +1,74 @@
+[
+  {
+    "mainType": "A",
+    "mediumType": "07",
+    "item": "0700000",
+    "permission": 0,
+    "color": {},
+    "layer": {},
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "07",
+    "item": "0700001",
+    "permission": 0,
+    "color": [{ "id": "40" }],
+    "layer": [{ "id": "09" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "07",
+    "item": "0700002",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "09" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "07",
+    "item": "0700003",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "09" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "07",
+    "item": "0700004",
+    "permission": 0,
+    "color": [{ "id": "36" }],
+    "layer": [{ "id": "09" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "07",
+    "item": "0700005",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "09" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "07",
+    "item": "0700006",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "09" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "07",
+    "item": "0700007",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "09" }],
+    "name": null
+  }
+]

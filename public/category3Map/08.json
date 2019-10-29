@@ -1,0 +1,29 @@
+[
+  {
+    "mainType": "A",
+    "mediumType": "08",
+    "item": "0800000",
+    "permission": 0,
+    "color": {},
+    "layer": {},
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "08",
+    "item": "0800001",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "04" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "08",
+    "item": "0800002",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "04" }],
+    "name": null
+  }
+]

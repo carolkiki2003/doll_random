@@ -1,0 +1,33 @@
+.cp_trip_btn {
+  display: inline-flex;
+  font-size: 16px;
+  line-height: 51px;
+  height: 51px;
+  color: $primary;
+  cursor: pointer;
+  &.disable {
+    filter: saturate(0%) brightness(50%);
+    cursor: not-allowed;
+  }
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 41px;
+    height: 51px;
+    background-image: url('../../static/images/tripBtn.png');
+  }
+  &:before {
+    background-position: 0 0;
+  }
+  &:after {
+    background-position: 100% 0;
+  }
+  > div {
+    @extend %text-overflow;
+    background-image: url('../../static/images/tripBtn.png');
+    max-width: 220px;
+    min-width: 70px;
+    position: relative;
+  }
+}

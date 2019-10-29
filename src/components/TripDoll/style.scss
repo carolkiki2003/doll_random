@@ -1,0 +1,17 @@
+// @import 'assets/style/init';
+
+.cp_trip_doll {
+  #doll_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+// $desktopHD | $desktop | $tablet | $mobile
+// @include devicepoint($desktopHD) {}

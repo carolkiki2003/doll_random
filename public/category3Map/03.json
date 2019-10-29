@@ -1,0 +1,110 @@
+[
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300001",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300002",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300003",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300004",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300005",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300006",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300007",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300008",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300009",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300010",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300011",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "03",
+    "item": "0300012",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "08" }],
+    "name": null
+  }
+]

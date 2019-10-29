@@ -1,0 +1,564 @@
+[
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100001",
+    "permission": 1,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100002",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100003",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100004",
+    "permission": 0,
+    "color": [{ "id": "42" }, { "id": "43" }],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100005",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100006",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100007",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100008",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100009",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100010",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100011",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100012",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100013",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100014",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100015",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100016",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100017",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100018",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100019",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100020",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100021",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100022",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100023",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100024",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100025",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100026",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100027",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100028",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100029",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100030",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100031",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100032",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "02" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100033",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }, { "id": "27" }],
+    "name": null
+  },
+  {
+    "mainType": "A",
+    "mediumType": "01",
+    "item": "0100034",
+    "permission": 0,
+    "color": [
+      { "id": "01" },
+      { "id": "22" },
+      { "id": "23" },
+      { "id": "24" },
+      { "id": "25" },
+      { "id": "26" },
+      { "id": "27" }
+    ],
+    "layer": [{ "id": "02" }],
+    "name": null
+  }
+]

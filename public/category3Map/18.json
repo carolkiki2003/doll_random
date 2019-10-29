@@ -1,0 +1,20 @@
+[
+  {
+    "mainType": "D",
+    "mediumType": "18",
+    "item": "1800000",
+    "permission": 0,
+    "color": {},
+    "layer": {},
+    "name": null
+  },
+  {
+    "mainType": "D",
+    "mediumType": "18",
+    "item": "1800001",
+    "permission": 0,
+    "color": [{ "id": "01" }],
+    "layer": [{ "id": "12" }],
+    "name": null
+  }
+]

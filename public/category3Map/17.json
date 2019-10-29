@@ -1,0 +1,38 @@
+[
+  {
+    "mainType": "D",
+    "mediumType": "17",
+    "item": "1700000",
+    "permission": 0,
+    "color": {},
+    "layer": {},
+    "name": null
+  },
+  {
+    "mainType": "D",
+    "mediumType": "17",
+    "item": "1700001",
+    "permission": 0,
+    "color": [{ "id": "33" }],
+    "layer": [{ "id": "10" }],
+    "name": null
+  },
+  {
+    "mainType": "D",
+    "mediumType": "17",
+    "item": "1700002",
+    "permission": 0,
+    "color": {},
+    "layer": {},
+    "name": null
+  },
+  {
+    "mainType": "D",
+    "mediumType": "17",
+    "item": "1700003",
+    "permission": 0,
+    "color": {},
+    "layer": {},
+    "name": null
+  }
+]

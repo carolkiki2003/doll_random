@@ -2,11 +2,13 @@
   import { mapMutations } from 'vuex'
   import Header from '@/components/Header'
   import Footer from '@/components/Footer'
+  import TripDollEditContainer from '@/containers/TripDollEditContainer'
   export default {
     name: 'Root',
     components: {
       Header,
-      Footer
+      Footer,
+      TripDollEditContainer
     },
     data() {
       return {}
