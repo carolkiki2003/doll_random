@@ -1,7 +1,7 @@
 #pg_root {
   min-height: 100%;
   display: grid;
-  // grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr;
   > .loading {
     @extend %set-fixed-full;
     background-color: $maskColor;

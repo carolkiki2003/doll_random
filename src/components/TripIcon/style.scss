@@ -6,7 +6,7 @@
   height: 40px;
   overflow: hidden;
   position: relative;
-  @for $i from 1 through 11 {
+  @for $i from 1 through 15 {
     &.icon_#{$i} {
       > span {
         &:nth-of-type(1) {
@@ -19,7 +19,7 @@
 
   > span {
     &:nth-of-type(1) {
-      background-image: url('../../static/images/iconSprite.png');
+      background-image: url('/images/iconSprite.png');
       background-position: 0 0;
       background-repeat: no-repeat;
     }

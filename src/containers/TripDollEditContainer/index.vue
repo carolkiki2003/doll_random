@@ -136,7 +136,7 @@
         isDrawing: true,
         saveBtnClicked: false,
         memberItem: [],
-        showCategory1: 'A',
+        showCategory1: '',
         canvasScale: 0.8,
         canvasMaxSize: 960
       }
@@ -197,7 +197,7 @@
         //     return JSON.parse(state.trip.user.sticker)
         //   } else return state.trip.user.sticker
         // },
-        // user: state => state.trip.user,
+        user: state => state.trip.user,
         ww: state => state.userAgent.browser.width,
         wh: state => state.userAgent.browser.height
       })
@@ -206,8 +206,7 @@
       init() {
         this.doll = require('../../lib').doll()
         this.doll.init(this)
-        this.sticker = Object.assign({}, this.sticker, this.stickerStore)
-        // console.log(category2)
+        this.sticker = Object.assign({}, this.sticker)
       },
       resizeCanvas() {
         let gameRatio = this.isPortrait ? 9 / 16 : 16 / 9
@@ -257,7 +256,7 @@
         // this.memberItem = `categoryThird${mediumType}`
 
         this.memberItem = require(`../../../public/category3Map/${mediumType}.json`)
-        console.log(this.memberItem)
+        console.log('now', mediumType, this.memberItem)
       },
       setDollSticker(str) {
         if (!str) return false
@@ -291,7 +290,7 @@
         return this.dollSpriteMaps[this.categoriesId.category2][id].frameId
       },
       resetSticker() {
-        this.sticker = Object.assign({}, this.sticker, this.stickerStore)
+        this.sticker = Object.assign({}, this.sticker)
         this.clearKeepSticker()
         if (this.doll) this.doll.drawDoll()
       },

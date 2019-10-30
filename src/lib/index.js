@@ -6,6 +6,7 @@ import dollColorMap from '../../public/api/dollColorMap.json'
 import dollLayerMap from '../../public/api/dollLayerMap.json'
 import category1 from '../../public/api/category1.json' // 大類對中類靜態資料
 import category2 from '../../public/api/category2.json'
+import all from '../../public/api/all.json'
 import dollSpriteMapbm from '../../public/api/dollSpriteMapbm.json'
 
 export function doll() {
@@ -31,7 +32,8 @@ export function doll() {
       super({ key: 'Doll', active: true })
 
       this.dollGroup = null
-      this.resetBtn = null
+      // this.resetBtn = null
+      // this.randomBtn = null
     }
     preload() {
       VM.getLayerArrSort.forEach(el => {
@@ -40,6 +42,26 @@ export function doll() {
       this.load.spritesheet('iconSprite0', '/images/iconSprite.png', {
         frameWidth: 40,
         frameHeight: 40
+      })
+      // const id = i.toString().padStart(2, '0')
+      // this.load.image('A_01_0100001_01', '/images/doll/01/A_01_0100001_01.png')
+      all.forEach((el, idx) => {
+        // console.log('el', el)
+        // for (let i = 0; i < el.child.length; i++) {
+        //   console.log(`${el.id}/${el.child}`)
+        //   this.load.image(
+        //     `${el.child}.png`,
+        //     `/images/doll/${el.id}/${el.child}.png`
+        //   )
+        // }
+        console.log(el.child)
+        el.child.forEach(child => {
+          // if (child) {
+          //   let str = '/images/doll/' + el.id + '/' + child + '.png'
+          //   console.log(str)
+          //   this.load.image(`${child}`, str)
+          // }
+        })
       })
     }
     create() {
@@ -78,15 +100,24 @@ export function doll() {
     setIcon() {
       let x = VM.isPortrait ? 650 : 600
       let y = 730
-      this.resetBtn = this.add
-        .sprite(x, y, 'iconSprite0')
-        .setFrame(12)
-        .setOrigin(0)
-        .setScale(2)
-        .setInteractive({ useHandCursor: true })
-      this.resetBtn.on('pointerdown', () => {
-        VM.resetSticker()
-      })
+      // this.resetBtn = this.add
+      //   .sprite(x, y, 'iconSprite0')
+      //   .setFrame(12)
+      //   .setOrigin(0)
+      //   .setScale(2)
+      //   .setInteractive({ useHandCursor: true })
+      // this.resetBtn.on('pointerdown', () => {
+      //   VM.resetSticker()
+      // })
+      // this.randomBtn = this.add
+      //   .sprite(x, y, 'iconSprite0')
+      //   .setFrame(13)
+      //   .setOrigin(0, 1)
+      //   .setScale(2)
+      //   .setInteractive({ useHandCursor: true })
+      // this.randomBtn.on('pointerdown', () => {
+      //   VM.setRandom()
+      // })
     }
     drawDoll() {
       let self = this
@@ -172,16 +203,16 @@ export function doll() {
         this.iconContainer.add([itemFrame, item])
       }
 
-      drawBtn('CategoryFirst', 'tripBtn1', [
-        {
-          name: 'saveBtn',
-          text: '儲存'
-        },
-        {
-          name: 'cancelBtn',
-          text: '取消'
-        }
-      ])
+      // drawBtn('CategoryFirst', 'tripBtn1', [
+      //   {
+      //     name: 'saveBtn',
+      //     text: '儲存'
+      //   },
+      //   {
+      //     name: 'cancelBtn',
+      //     text: '取消'
+      //   }
+      // ])
 
       this.input.on('gameobjectdown', (pointer, obj) => {
         if (obj.name.includes('icon')) {
@@ -471,6 +502,7 @@ export function doll() {
               return el.item === VM.categoriesId.category3
             })
           }
+          console.log('!!!', this.categoryArr3)
           if (this.categoryArr3.item.substr(2, 7) === '00000') {
             VM.categoriesId.category4 = '00'
           } else {
@@ -501,14 +533,14 @@ export function doll() {
         if (VM.memberItem && VM.memberItem.length > 0) {
           this.categoryArr2 = VM.memberItem
         }
-        console.log('categoryArr2', this.categoryArr2)
         let categoryObj2 = {}
         if (category2) {
           categoryObj2 = category2.find(el => {
             return el.id === VM.categoriesId.category2
           })
+          console.log(categoryObj2)
         }
-        if (categoryObj2 > 1) {
+        if (categoryObj2 && VM.memberItem.length > 1) {
           this.instructionText = this.add.text(
             (this.width - iconSize * 4) / 2,
             30,
@@ -646,6 +678,7 @@ export function doll() {
             colorSize + colorMargin * 2
           )
           .setName('colorContainer')
+        console.log('color', this.colorListLen)
         if (this.colorListLen > 0) {
           let containerFrame = this.add.graphics({
             fillStyle: { color: 0xffffff }
@@ -742,6 +775,7 @@ export function doll() {
   let VM
 
   function runGame() {
+    console.log('runGame')
     clearGame()
     game = new PhaserGame(config)
   }
@@ -765,7 +799,7 @@ export function doll() {
       config.height = 900
     }
 
-    runGame()
+    // runGame()
   }
 
   function changeLayout() {

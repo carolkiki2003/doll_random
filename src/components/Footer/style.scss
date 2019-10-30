@@ -1,6 +1,7 @@
 .cp_footer {
   background-color: $black;
   padding-top: 50px;
+  grid-row-start: -1;
   > div {
     justify-content: space-between;
     > .left {
