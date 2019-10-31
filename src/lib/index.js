@@ -6,7 +6,7 @@ import dollColorMap from '../../public/api/dollColorMap.json'
 import dollLayerMap from '../../public/api/dollLayerMap.json'
 import category1 from '../../public/api/category1.json' // 大類對中類靜態資料
 import category2 from '../../public/api/category2.json'
-import all from '../../public/api/all.json'
+// import allLayerPhoto from '../../public/api/allLayerPhoto.json'
 import dollSpriteMapbm from '../../public/api/dollSpriteMapbm.json'
 
 export function doll() {
@@ -43,26 +43,14 @@ export function doll() {
         frameWidth: 40,
         frameHeight: 40
       })
-      // const id = i.toString().padStart(2, '0')
-      // this.load.image('A_01_0100001_01', '/images/doll/01/A_01_0100001_01.png')
-      all.forEach((el, idx) => {
-        // console.log('el', el)
-        // for (let i = 0; i < el.child.length; i++) {
-        //   console.log(`${el.id}/${el.child}`)
-        //   this.load.image(
-        //     `${el.child}.png`,
-        //     `/images/doll/${el.id}/${el.child}.png`
-        //   )
-        // }
-        console.log(el.child)
-        el.child.forEach(child => {
-          // if (child) {
-          //   let str = '/images/doll/' + el.id + '/' + child + '.png'
-          //   console.log(str)
-          //   this.load.image(`${child}`, str)
-          // }
-        })
-      })
+      // allLayerPhoto.forEach(el => {
+      //   el.child.forEach(child => {
+      //     if (child) {
+      //       let str = '/images/doll/' + el.layer + '/' + child + '.png'
+      //       this.load.image(`${child}`, str)
+      //     }
+      //   })
+      // })
     }
     create() {
       // let graphics = this.add.graphics()
@@ -70,7 +58,7 @@ export function doll() {
       // graphics.fillRect(0, 100, 700, 700)
 
       this.setDoll()
-      this.setIcon()
+      // this.setIcon()
 
       if (VM) VM.resizeCanvas()
     }
@@ -83,7 +71,6 @@ export function doll() {
       let y = VM.isPortrait ? 100 : h / 2 - 350 * ratio
 
       this.dollGroup = this.add.container().setPosition(x, y)
-
       VM.getLayerArrSort.forEach(el => {
         let dollComponent = this.add
           .image(
@@ -93,40 +80,37 @@ export function doll() {
           )
           .setScale(ratio)
           .setOrigin(0, 0)
-
         this.dollGroup.add(dollComponent)
       })
     }
-    setIcon() {
-      let x = VM.isPortrait ? 650 : 600
-      let y = 730
-      // this.resetBtn = this.add
-      //   .sprite(x, y, 'iconSprite0')
-      //   .setFrame(12)
-      //   .setOrigin(0)
-      //   .setScale(2)
-      //   .setInteractive({ useHandCursor: true })
-      // this.resetBtn.on('pointerdown', () => {
-      //   VM.resetSticker()
-      // })
-      // this.randomBtn = this.add
-      //   .sprite(x, y, 'iconSprite0')
-      //   .setFrame(13)
-      //   .setOrigin(0, 1)
-      //   .setScale(2)
-      //   .setInteractive({ useHandCursor: true })
-      // this.randomBtn.on('pointerdown', () => {
-      //   VM.setRandom()
-      // })
-    }
+    // setIcon() {
+    //   let x = VM.isPortrait ? 650 : 600
+    //   let y = 730
+    //   this.resetBtn = this.add
+    //     .sprite(x, y, 'iconSprite0')
+    //     .setFrame(12)
+    //     .setOrigin(0)
+    //     .setScale(2)
+    //     .setInteractive({ useHandCursor: true })
+    //   this.resetBtn.on('pointerdown', () => {
+    //     VM.resetSticker()
+    //   })
+    //   this.randomBtn = this.add
+    //     .sprite(x, y, 'iconSprite0')
+    //     .setFrame(13)
+    //     .setOrigin(0, 1)
+    //     .setScale(2)
+    //     .setInteractive({ useHandCursor: true })
+    //   this.randomBtn.on('pointerdown', () => {
+    //     VM.setRandom()
+    //   })
+    // }
     drawDoll() {
       let self = this
       this.load.once('complete', loadImageComplete)
-
       VM.getLayerArrSort.forEach(el => {
         this.load.image('doll_' + el.src, el.src)
       })
-
       this.load.start()
 
       function loadImageComplete() {
@@ -484,6 +468,7 @@ export function doll() {
           this.redrawBtn(0, 0)
           VM.$root.$emit('DOLL_STICKER_CHECK')
           drawDoll()
+
           this.scene.switch('CategoryFirst')
           VM.sceneStatus.current = 'CategoryFirst'
         } else if (
@@ -502,7 +487,6 @@ export function doll() {
               return el.item === VM.categoriesId.category3
             })
           }
-          console.log('!!!', this.categoryArr3)
           if (this.categoryArr3.item.substr(2, 7) === '00000') {
             VM.categoriesId.category4 = '00'
           } else {
@@ -538,7 +522,6 @@ export function doll() {
           categoryObj2 = category2.find(el => {
             return el.id === VM.categoriesId.category2
           })
-          console.log(categoryObj2)
         }
         if (categoryObj2 && VM.memberItem.length > 1) {
           this.instructionText = this.add.text(
@@ -678,7 +661,6 @@ export function doll() {
             colorSize + colorMargin * 2
           )
           .setName('colorContainer')
-        console.log('color', this.colorListLen)
         if (this.colorListLen > 0) {
           let containerFrame = this.add.graphics({
             fillStyle: { color: 0xffffff }
@@ -775,7 +757,6 @@ export function doll() {
   let VM
 
   function runGame() {
-    console.log('runGame')
     clearGame()
     game = new PhaserGame(config)
   }
@@ -799,7 +780,7 @@ export function doll() {
       config.height = 900
     }
 
-    // runGame()
+    runGame()
   }
 
   function changeLayout() {

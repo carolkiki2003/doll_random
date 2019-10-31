@@ -9,6 +9,7 @@
   import category3 from '../../../public/api/category3.json'
   import category4 from '../../../public/api/category4.json'
   import all from '../../../public/api/all.json'
+  import message from '../../../public/api/message.json'
 
   import categoryThird01 from '../../../public/category3Map/01.json'
   import categoryThird02 from '../../../public/category3Map/02.json'
@@ -51,6 +52,7 @@
   import dollSpriteMaps18 from '../../../public/api/dollSpriteMaps18.json'
   import dollSpriteMaps19 from '../../../public/api/dollSpriteMaps19.json'
   import dollSpriteMaps20 from '../../../public/api/dollSpriteMaps20.json'
+  import { async } from 'q'
 
   export default {
     name: 'TripDollEditContainer',
@@ -138,7 +140,8 @@
         memberItem: [],
         showCategory1: '',
         canvasScale: 0.8,
-        canvasMaxSize: 960
+        canvasMaxSize: 960,
+        messagetext: ''
       }
     },
     computed: {
@@ -152,12 +155,11 @@
           if (target) {
             let targetIdSplit = target.split('_')
             let found = category3.find(el => el.id === targetIdSplit[2])
-
             if (found) found = JSON.parse(JSON.stringify(found))
 
             if (found && found.layer) {
               found.layer.forEach(ly => {
-                this.$set(ly, 'src/static', '/images/doll/' + ly.id + '/' + this.sticker[prop] + '.png')
+                this.$set(ly, 'src', '/images/doll/' + ly.id + '/' + this.sticker[prop] + '.png')
               })
               arr.push(...found.layer)
             }
@@ -203,6 +205,11 @@
       })
     },
     methods: {
+      messageRandom() {
+        let m = Math.floor(Math.random() * message.length)
+        async
+        this.messagetext = message[m].text
+      },
       init() {
         this.doll = require('../../lib').doll()
         this.doll.init(this)
@@ -253,10 +260,7 @@
       //   }
       // },
       async loadCategory3Api(mediumType) {
-        // this.memberItem = `categoryThird${mediumType}`
-
         this.memberItem = require(`../../../public/category3Map/${mediumType}.json`)
-        console.log('now', mediumType, this.memberItem)
       },
       setDollSticker(str) {
         if (!str) return false
@@ -297,13 +301,12 @@
       setRandom() {
         let start = null
         let s_keep = null
-        // var a = setInterval(this.randomSticker, 100)
         let self = this
         function step(timestamp) {
           if (!start) start = timestamp
           var progress = timestamp - start
 
-          var ms = Math.floor(progress / 100)
+          var ms = Math.floor(progress / 150)
           if (s_keep !== ms) {
             s_keep = ms
             self.randomSticker()
@@ -313,6 +316,8 @@
           }
         }
         window.requestAnimationFrame(step)
+        window.setTimeout(() => this.messageRandom(), 1000)
+        console.log(this.saveBtnClicked)
         // var a = setInterval(this.randomSticker, 100)
         // setInterval(this.randomSticker, 100)
         // setTimeout(clearInterval(a), 1000)
@@ -321,6 +326,7 @@
         for (let prop in this.sticker) {
           let found = all.find(el => el.name === prop)
           let a = Math.floor(Math.random() * found.child.length)
+          async
           this.sticker[prop] = found.child[a].trim()
         }
         this.doll.drawDoll()
