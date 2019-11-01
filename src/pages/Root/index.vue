@@ -11,9 +11,14 @@
       TripDollEditContainer
     },
     data() {
-      return {}
+      return {
+        messagetext: ''
+      }
     },
     methods: {
+      message(messagetext) {
+        this.messagetext = messagetext
+      },
       resizeHandler() {
         const width = document.body.clientWidth
         const height = document.body.clientHeight

@@ -204,7 +204,7 @@ export function doll() {
           this.scene.switch('CategorySecond')
           VM.sceneStatus.current = 'CategorySecond'
         } else if (obj.name.includes('saveBtn')) {
-          VM.submit(1)
+          // VM.submit(1)
         } else if (obj.name.includes('cancelBtn')) {
           VM.close()
         }
@@ -784,6 +784,7 @@ export function doll() {
   }
 
   function changeLayout() {
+    //這裡要再看看看看 resize重整問題
     if (VM.isPortrait) {
       if (!VM.resizeStatus) {
         VM.resizeStatus = true

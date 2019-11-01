@@ -199,16 +199,17 @@
         //     return JSON.parse(state.trip.user.sticker)
         //   } else return state.trip.user.sticker
         // },
-        user: state => state.trip.user,
+        // user: state => state.trip.user,
         ww: state => state.userAgent.browser.width,
         wh: state => state.userAgent.browser.height
       })
     },
     methods: {
-      messageRandom() {
+      messageRandom(messagetext) {
         let m = Math.floor(Math.random() * message.length)
         async
         this.messagetext = message[m].text
+        this.$emit('message', this.messagetext)
       },
       init() {
         this.doll = require('../../lib').doll()
@@ -264,6 +265,7 @@
       },
       setDollSticker(str) {
         if (!str) return false
+        console.log(str)
 
         // 保留尚未儲存的 sticker
         if (!this.keepSticker) {
@@ -317,7 +319,6 @@
         }
         window.requestAnimationFrame(step)
         window.setTimeout(() => this.messageRandom(), 1000)
-        console.log(this.saveBtnClicked)
         // var a = setInterval(this.randomSticker, 100)
         // setInterval(this.randomSticker, 100)
         // setTimeout(clearInterval(a), 1000)

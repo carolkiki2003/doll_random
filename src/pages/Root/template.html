@@ -1,6 +1,8 @@
 <div id="pg_root">
   <Header></Header>
-  <TripDollEditContainer></TripDollEditContainer>
+  <div v-if="messagetext"class="message2" >{{messagetext}},要不要去<a href="https://star.104.com.tw/trip" target="_blank">時光機</a>探索看看!</div>
+  <div v-if="!messagetext"class="message2" >歡迎來到Star試衣間，快來創造出屬於你獨一無二的造型吧！</div>
+  <TripDollEditContainer @message="message"></TripDollEditContainer>
   <router-view />
   <Footer></Footer>
 </div>
