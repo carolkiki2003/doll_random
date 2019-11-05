@@ -80,8 +80,8 @@
         doll: null,
         resizeStatus: false,
         sceneStatus: {
-          current: '',
-          firstInit: true
+          current: 'CategoryFirst',
+          firstInit: false
         },
         categoriesId: {
           category1: null,
@@ -194,14 +194,15 @@
         }
       },
       ...mapState({
-        // stickerStore: state => {
-        //   if (typeof state.trip.user.sticker === 'string') {
-        //     return JSON.parse(state.trip.user.sticker)
-        //   } else return state.trip.user.sticker
-        // },
-        // user: state => state.trip.user,
+        stickerStore: state => {
+          if (typeof state.trip.user.sticker === 'string') {
+            return JSON.parse(state.trip.user.sticker)
+          } else return state.trip.user.sticker
+        },
+        user: state => state.trip.user,
         ww: state => state.userAgent.browser.width,
-        wh: state => state.userAgent.browser.height
+        wh: state => state.userAgent.browser.height,
+        orientation: state => state.userAgent.browser.orientation
       })
     },
     methods: {
@@ -265,7 +266,6 @@
       },
       setDollSticker(str) {
         if (!str) return false
-        console.log(str)
 
         // 保留尚未儲存的 sticker
         if (!this.keepSticker) {
@@ -318,6 +318,9 @@
           }
         }
         window.requestAnimationFrame(step)
+        if (this.keepSticker) {
+          this.clearKeepSticker()
+        }
         window.setTimeout(() => this.messageRandom(), 1000)
         // var a = setInterval(this.randomSticker, 100)
         // setInterval(this.randomSticker, 100)
@@ -390,10 +393,11 @@
       }
     },
     watch: {
-      ww() {
-        this.resizeHandler()
-      },
-      wh() {
+      // ww() {
+      //   this.resizeHandler()
+      // }
+      orientation(newVal) {
+        console.log(newVal)
         this.resizeHandler()
       }
     },

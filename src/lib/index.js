@@ -213,7 +213,7 @@ export function doll() {
       if (VM) {
         VM.resizeCanvas()
 
-        if (VM.showCategory1 !== '' && VM.sceneStatus.firstInit) {
+        if (VM.sceneStatus.firstInit) {
           // 初始資料有指定特定大類，切到其對應中類列表
           VM.sceneStatus.firstInit = false
           VM.categoriesId.category1 = VM.showCategory1
@@ -275,6 +275,7 @@ export function doll() {
           if (this.instructionText) this.instructionText.destroy()
           this.scene.switch('CategoryFirst')
           VM.sceneStatus.current = 'CategoryFirst'
+          this.originCategory1 = null
         }
       })
       if (VM) VM.resizeCanvas()
@@ -291,18 +292,23 @@ export function doll() {
             return el.id === VM.categoriesId.category1
           })
         }
-
         if (categoryObj1) {
-          this.instructionText = this.add.text(
-            (this.width - iconSize * 4) / 2,
-            (this.height - iconSize) / 4 - 50,
-            `請選擇你要更換的${categoryObj1.name}`,
-            {
-              fontSize: '40px',
-              fontFamily: 'Microsoft JhengHei, sans-serif',
-              fill: '#474747'
-            }
-          )
+          this.instructionText === null
+          if (this.instructionText) {
+            this.instructionText.setText(`請選擇你要更換的${categoryObj1.name}`)
+          } else {
+            this.instructionText = this.add.text(
+              (this.width - iconSize * 4) / 2,
+              (this.height - iconSize) / 4 - 50,
+              `請選擇你要更換的${categoryObj1.name}`,
+              {
+                fontSize: '40px',
+                fontFamily: 'Microsoft JhengHei, sans-serif',
+                fill: '#474747'
+              }
+            )
+          }
+          categoryObj1 === null
         }
 
         const iconListLen =
@@ -340,6 +346,7 @@ export function doll() {
           this.iconContainer.add([itemFrame, item])
         }
       }
+      this.instructionText === null
     }
   }
 
@@ -772,34 +779,24 @@ export function doll() {
 
   function init(vm) {
     VM = vm
-    if (VM.isPortrait) {
+    if (VM.orientation === 'portrait') {
       config.width = 900
       config.height = 1600
     } else {
       config.width = 1600
       config.height = 900
     }
-
-    runGame()
   }
 
   function changeLayout() {
-    //這裡要再看看看看 resize重整問題
-    if (VM.isPortrait) {
-      if (!VM.resizeStatus) {
-        VM.resizeStatus = true
-        config.width = 900
-        config.height = 1600
-        runGame()
-      }
+    if (VM.orientation === 'portrait') {
+      config.width = 900
+      config.height = 1600
     } else {
-      if (VM.resizeStatus) {
-        VM.resizeStatus = false
-        config.width = 1600
-        config.height = 900
-        runGame()
-      }
+      config.width = 1600
+      config.height = 900
     }
+    runGame()
   }
 
   function destroy() {
