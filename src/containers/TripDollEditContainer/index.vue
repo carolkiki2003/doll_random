@@ -397,7 +397,6 @@
       //   this.resizeHandler()
       // }
       orientation(newVal) {
-        console.log(newVal)
         this.resizeHandler()
       }
     },

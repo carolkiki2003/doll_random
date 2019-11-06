@@ -212,7 +212,6 @@ export function doll() {
 
       if (VM) {
         VM.resizeCanvas()
-
         if (VM.sceneStatus.firstInit) {
           // 初始資料有指定特定大類，切到其對應中類列表
           VM.sceneStatus.firstInit = false
@@ -293,22 +292,20 @@ export function doll() {
           })
         }
         if (categoryObj1) {
-          this.instructionText === null
-          if (this.instructionText) {
-            this.instructionText.setText(`請選擇你要更換的${categoryObj1.name}`)
-          } else {
-            this.instructionText = this.add.text(
-              (this.width - iconSize * 4) / 2,
-              (this.height - iconSize) / 4 - 50,
-              `請選擇你要更換的${categoryObj1.name}`,
-              {
-                fontSize: '40px',
-                fontFamily: 'Microsoft JhengHei, sans-serif',
-                fill: '#474747'
-              }
-            )
-          }
-          categoryObj1 === null
+          if (this.instructionText) this.instructionText.destroy()
+
+          this.instructionText = this.add.text(
+            (this.width - iconSize * 4) / 2,
+            (this.height - iconSize) / 4 - 50,
+            `請選擇你要更換的${categoryObj1.name}`,
+            {
+              fontSize: '40px',
+              fontFamily: 'Microsoft JhengHei, sans-serif',
+              fill: '#474747'
+            }
+          )
+
+          // categoryObj1 === null
         }
 
         const iconListLen =
