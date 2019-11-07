@@ -12,11 +12,11 @@
     <!-- 遮罩 -->
     <!-- <div class="mask ut_fixed_full" @click.prevent="close"></div> -->
     <div id="frame_group" ref="frameGroup">
-      <!-- <TripIcon
-        class="btn_reset"
-        :iconNumber="13"
+      <TripIcon
+        class="btn_saved"
+        :iconNumber="16"
         :borderColor="'#bccad2'"
-        @click.native="cancelDollSticker()" /> -->
+        @click.native="saveDollSticker" />
         <TripIcon
         class="btn_random"
         :iconNumber="15"
@@ -24,6 +24,6 @@
         @click.native="setRandom" />
       <footer><div></div></footer>
     </div>
-
+    <div class="thumbnail"></div>
   </div>
 </transition>

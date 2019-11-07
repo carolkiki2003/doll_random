@@ -187,16 +187,16 @@ export function doll() {
         this.iconContainer.add([itemFrame, item])
       }
 
-      // drawBtn('CategoryFirst', 'tripBtn1', [
-      //   {
-      //     name: 'saveBtn',
-      //     text: '儲存'
-      //   },
-      //   {
-      //     name: 'cancelBtn',
-      //     text: '取消'
-      //   }
-      // ])
+      drawBtn('CategoryFirst', 'tripBtn1', [
+        // {
+        //   name: 'saveBtn',
+        //   text: '儲存'
+        // },
+        // {
+        //   name: 'cancelBtn',
+        //   text: '取消'
+        // }
+      ])
 
       this.input.on('gameobjectdown', (pointer, obj) => {
         if (obj.name.includes('icon')) {

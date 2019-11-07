@@ -135,6 +135,7 @@
           bg: '' // 背景
         },
         keepSticker: '',
+        savedSticker: [],
         isDrawing: true,
         saveBtnClicked: false,
         memberItem: [],
@@ -206,6 +207,22 @@
       })
     },
     methods: {
+      saveDollSticker() {
+        this.savedSticker.push(this.sticker)
+        console.log(this.savedSticker)
+        this.thumbnail()
+      },
+      thumbnail() {
+        let canvasDOM = document.getElementById('doll_canvas')
+        let data = canvasDOM.toDataURL('image/png')
+        console.log('data:', data)
+        let link = document.createElement('a')
+        console.log('link', link)
+        link.href = data
+        link.innerHTML = `<img src="${data}"/>`
+        let thumbnail = document.querySelector('.thumbnail')
+        thumbnail.appendChild(link, thumbnail.child)
+      },
       messageRandom(messagetext) {
         let m = Math.floor(Math.random() * message.length)
         async
@@ -350,6 +367,7 @@
           .then(buf => {
             return new File([buf], filename, { type: mimeType })
           })
+        console.log('url:', url)
       },
       // async uploadStickerFile(dataUrl) {
       //   let file = await this.base64toFile(dataUrl, 'base64toImage.png', 'image/png')

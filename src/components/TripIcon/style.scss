@@ -6,7 +6,7 @@
   height: 40px;
   overflow: hidden;
   position: relative;
-  @for $i from 1 through 15 {
+  @for $i from 1 through 16 {
     &.icon_#{$i} {
       > span {
         &:nth-of-type(1) {

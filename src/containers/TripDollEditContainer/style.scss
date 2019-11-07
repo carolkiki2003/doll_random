@@ -53,13 +53,13 @@
     //     background-image: url('../../static/images/tripBoxHeader_02.png');
     //   }
     // }
-    // > .btn_reset {
-    //   position: absolute;
-    //   top: 20px;
-    //   right: 20px;
-    //   cursor: pointer;
-    //   pointer-events: auto;
-    // }
+    > .btn_saved {
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      cursor: pointer;
+      pointer-events: auto;
+    }
     > .btn_random {
       position: absolute;
       top: 20px;
@@ -88,5 +88,11 @@
     //     background-image: url('../../static/images/tripBoxFooter_02.png');
     //   }
     // }
+  }
+  .thumbnail {
+    > a {
+      > img {
+      }
+    }
   }
 }
