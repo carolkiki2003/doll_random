@@ -208,20 +208,44 @@
     },
     methods: {
       saveDollSticker() {
-        this.savedSticker.push(this.sticker)
-        console.log(this.savedSticker)
-        this.thumbnail()
+        let canvasDOM = document.getElementById('doll_canvas')
+        let data = canvasDOM.toDataURL('image/png')
+        this.savedSticker.push({
+          base64Img: data,
+          sticker: JSON.parse(JSON.stringify(this.sticker))
+        })
+        // console.log(this.savedSticker)
+        // this.thumbnail()
+        // this.setThumbnailIdx()
       },
       thumbnail() {
         let canvasDOM = document.getElementById('doll_canvas')
         let data = canvasDOM.toDataURL('image/png')
-        console.log('data:', data)
         let link = document.createElement('a')
-        console.log('link', link)
-        link.href = data
-        link.innerHTML = `<img src="${data}"/>`
+        // link.href = data
+        link.setAttribute('class', 'thumbnailChild')
+        link.innerHTML = `<img src="${data}" style="width:100px;height:100px"/>`
         let thumbnail = document.querySelector('.thumbnail')
         thumbnail.appendChild(link, thumbnail.child)
+      },
+      // setThumbnailIdx() {
+      //   let thumbnails = document.getElementsByClassName('thumbnailChild')
+      //   console.log('thumbnails:', thumbnails)
+      //   for (var i = 0; i < thumbnails.length; i++) {
+      //     // thumbnails[i].index = i
+
+      //     thumbnails[i].setAttribute('data-index', i)
+
+      //     thumbnails[i].addEventListener('click', e => {
+      //       this.sticker = this.savedSticker[i]
+      //       console.log('!!!', e.target)
+      //       this.doll.drawDoll()
+      //     })
+      //   }
+      // },
+      setThumbnailIdxTest(sticker) {
+        this.sticker = Object.assign({}, this.sticker, sticker)
+        this.doll.drawDoll()
       },
       messageRandom(messagetext) {
         let m = Math.floor(Math.random() * message.length)
