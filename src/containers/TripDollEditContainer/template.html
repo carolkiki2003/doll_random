@@ -22,14 +22,16 @@
         :iconNumber="15"
         :borderColor="'#bccad2'"
         @click.native="setRandom" />
-        
-    </div>
-    <div class="thumbnail">
-
-
-      <a href="" v-for="item in savedSticker" @click="setThumbnailIdxTest(item.sticker)">
-        <img :src="item.base64Img" alt="">
-      </a>
+        <div class="thumbnail" >
+          <transition-group name="fadeInY" tag="span"  class="fadeInY-item">
+            <a href="javascript:;" 
+            v-for="(item,index) in savedSticker" 
+            :key="item.date" 
+            @click="setThumbnailIdx(item.sticker)" >
+                <img :src="item.base64Img" alt="">
+            </a>
+            </transition-group>
+        </div>       
     </div>
   </div>
 </transition>
