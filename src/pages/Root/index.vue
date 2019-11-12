@@ -12,10 +12,15 @@
     },
     data() {
       return {
-        messagetext: ''
+        messagetext: '',
+        decodeText: ''
       }
     },
     methods: {
+      sendCode() {
+        this.$refs.changeSticker.sendCodeChild()
+        this.decodeText = ''
+      },
       message(messagetext) {
         this.messagetext = messagetext
       },

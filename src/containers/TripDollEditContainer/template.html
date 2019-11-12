@@ -26,12 +26,13 @@
           <transition-group name="fadeInY" tag="span"  class="fadeInY-item">
             <a href="javascript:;" 
             v-for="(item,index) in savedSticker" 
-            :key="item.date" 
+            :key="item.code" 
             @click="setThumbnailIdx(item.sticker)" >
                 <img :src="item.base64Img" alt="">
             </a>
             </transition-group>
         </div>       
     </div>
+    <!-- <ul class="code"><li v-for="(item,index) in savedSticker" :key="item.code" >{{item.code}}</li></ul> -->
   </div>
 </transition>

@@ -1,10 +1,5 @@
 #ct_trip_doll_edit_container {
   overflow: hidden;
-  background: linear-gradient(
-    -180deg,
-    rgb(255, 255, 255) 50%,
-    rgb(199, 218, 229)
-  );
 
   .cp_trip_doll {
     z-index: -999;
@@ -120,5 +115,13 @@
   .fadeInY-leave-to {
     opacity: 0;
     transform: translateY(-83px);
+  }
+  .code {
+    width: 50%;
+    margin: 0 auto;
+    li {
+      word-break: break-all;
+      margin-top: 10px;
+    }
   }
 }

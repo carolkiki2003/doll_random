@@ -146,6 +146,12 @@
         thumbnailUp: false
       }
     },
+    props: {
+      decodeText: {
+        type: String,
+        default: ''
+      }
+    },
     computed: {
       getLayerArrSort() {
         return this.getLayerArr.slice().sort((a, b) => b.id - a.id)
@@ -208,35 +214,39 @@
       })
     },
     methods: {
-      saveDollSticker() {
+      sendCodeChild() {
+        let decode = this.decodeText.replace(/^\"|\"$/g, '')
+        let newDecodeText = JSON.parse(atob(decode))
+        this.sticker = Object.assign({}, this.sticker, newDecodeText)
+        this.doll.drawDoll()
+      },
+      pushSavedSticker() {
         let canvasDOM = document.getElementById('doll_canvas')
         let data = canvasDOM.toDataURL('image/png')
-
+        let code2 = []
+        for (let i in this.sticker) {
+          let val = this.sticker[i].substr(5)
+          if (val === '') {
+            code2.push('000000000')
+          } else {
+            code2.push(val)
+          }
+        }
+        console.log(code2)
+        this.savedSticker.push({
+          base64Img: data,
+          sticker: JSON.parse(JSON.stringify(this.sticker)),
+          code: btoa(JSON.stringify(this.sticker)),
+          code2: code2
+        })
+      },
+      saveDollSticker() {
         if (this.savedSticker.length > 4) {
           this.savedSticker.shift()
-          this.savedSticker.push({
-            base64Img: data,
-            sticker: JSON.parse(JSON.stringify(this.sticker)),
-            date: new Date().getMilliseconds()
-          })
+          this.pushSavedSticker()
           this.thumbnailUp = true
-        } else
-          this.savedSticker.push({
-            base64Img: data,
-            sticker: JSON.parse(JSON.stringify(this.sticker)),
-            date: new Date().getMilliseconds()
-          })
-        console.log(this.savedSticker.length)
+        } else this.pushSavedSticker()
       },
-      // thumbnail() {
-      //   let canvasDOM = document.getElementById('doll_canvas')
-      //   let data = canvasDOM.toDataURL('image/png')
-      //   let link = document.createElement('a')
-      //   link.setAttribute('class', 'thumbnailChild')
-      //   link.innerHTML = `<img src="${data}" style="width:100px;height:100px"/>`
-      //   let thumbnail = document.querySelector('.thumbnail')
-      //   thumbnail.appendChild(link, thumbnail.child)
-      // },
       setThumbnailIdx(sticker) {
         this.sticker = Object.assign({}, this.sticker, sticker)
         this.doll.drawDoll()
