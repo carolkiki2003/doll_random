@@ -19,7 +19,7 @@
     position: relative;
   }
   .message2 {
-    font-size: 20px;
+    font-size: 14px;
     line-height: 30px;
     padding: 30px 10px 30px 10px;
     background-color: white;
@@ -30,19 +30,19 @@
     }
   }
   .decoder {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     padding: 20px;
-    margin: 0 auto;
-    margin-top: 55px;
+    margin: 55px auto 0;
     p {
       text-align: center;
-      font-size: 16px;
+      font-size: 14px;
       display: inline-block;
       line-height: 22px;
       margin-bottom: 10px;
     }
     a {
-      font-size: 16px;
+      font-size: 14px;
       float: right;
       background-color: #299eaa;
       color: white;
@@ -53,6 +53,7 @@
     textarea {
       width: 100%;
       margin: 0 auto;
+      border-color: rgb(188, 202, 210);
     }
   }
 }
