@@ -1,13 +1,10 @@
-<transition
-  name="fade"
-  appear
->
-  <div id="ct_trip_doll_edit_container" >
+<transition name="fade" appear>
+  <div id="ct_trip_doll_edit_container">
     <!-- 紙娃娃編輯 canvas -->
     <div id="doll_canvas_content"></div>
 
     <!-- 拿來輸出紙娃娃圖片的 canvas -->
-    <TripDoll :sticker="sticker" @drawComplete="setDrawComplete"/>
+    <TripDoll :sticker="sticker" @drawComplete="setDrawComplete" />
 
     <!-- 遮罩 -->
     <!-- <div class="mask ut_fixed_full" @click.prevent="close"></div> -->
@@ -16,23 +13,31 @@
         class="btn_saved"
         :iconNumber="16"
         :borderColor="'#bccad2'"
-        @click.native="saveDollSticker" />
-        <TripIcon
+        @click.native="saveDollSticker"
+      />
+      <TripIcon
         class="btn_random"
         :iconNumber="15"
         :borderColor="'#bccad2'"
-        @click.native="setRandom" />
-        <div class="thumbnail" >
-          <transition-group name="fadeInY" tag="span"  class="fadeInY-item">
-            <a href="javascript:;" 
-            v-for="(item,index) in savedSticker" 
-            :key="item.code" 
-            @click="setThumbnailIdx(item.sticker)" >
-                <img :src="item.base64Img" alt="">
-            </a>
-            </transition-group>
-        </div>       
+        @click.native="setRandom"
+      />
+      <div class="thumbnail">
+        <transition-group name="fadeInY" tag="span" class="fadeInY-item">
+          <a
+            href="javascript:;"
+            v-for="(item,index) in savedSticker"
+            :key="item.code"
+            @click="setThumbnailIdx(item.sticker)"
+          >
+            <img :src="item.base64Img" alt="" />
+          </a>
+        </transition-group>
+      </div>
     </div>
-    <!-- <ul class="code"><li v-for="(item,index) in savedSticker" :key="item.code" >{{item.code}}</li></ul> -->
+    <!-- <ul class="code">
+      <li v-for="(item,index) in savedSticker" :key="item.code">
+        {{item.code}}
+      </li>
+    </ul> -->
   </div>
 </transition>

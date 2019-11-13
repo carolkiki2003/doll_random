@@ -53,6 +53,7 @@
   import dollSpriteMaps19 from '../../../public/api/dollSpriteMaps19.json'
   import dollSpriteMaps20 from '../../../public/api/dollSpriteMaps20.json'
   import { async } from 'q'
+  import { parse } from 'path'
 
   export default {
     name: 'TripDollEditContainer',
@@ -131,8 +132,8 @@
           earing: '', // 耳環
           necklace: '', // 項鍊
           body_features: '', // 其他配件
-          head_features: '', // 頭飾
-          bg: '' // 背景
+          head_features: '' // 頭飾
+          // bg: '' // 背景
         },
         keepSticker: '',
         savedSticker: [],
@@ -214,30 +215,82 @@
       })
     },
     methods: {
+      // sendCodeChild() {
+      //   let decode = this.decodeText.replace(/^\"|\"$/g, '')
+      //   let newDecodeText = JSON.parse(atob(decode))
+      //   this.sticker = Object.assign({}, this.sticker, newDecodeText)
+      //   this.doll.drawDoll()
+      // },
       sendCodeChild() {
-        let decode = this.decodeText.replace(/^\"|\"$/g, '')
-        let newDecodeText = JSON.parse(atob(decode))
-        this.sticker = Object.assign({}, this.sticker, newDecodeText)
+        let decode = []
+        let foundArr = []
+
+        //去除字串引號
+        let text = this.decodeText.replace(/^\"|\"$/g, '')
+        //字串拆解4個數字一組
+        for (let i = 0; i < 80; i = i + 4) {
+          decode.push(text.substr(i, 4))
+        }
+        //利用4個數字在all.json找出對應sticker
+        for (let i = 0; i < 20; i++) {
+          let found = ''
+          if (decode[i] === '0000') {
+            foundArr[i] = ''
+          } else {
+            foundArr[i] = all[i].child.find(el => el.substr(10).replace('_', '') === decode[i])
+          }
+        }
+        //對應sticker
+        let Arr = {
+          hair: foundArr[0], // 髮型
+          face: foundArr[1], // 臉(含耳朵)
+          eyebrow: foundArr[2], // 眉毛
+          eye: foundArr[3], // 眼睛
+          nose: foundArr[4], // 鼻子
+          mouth: foundArr[5], // 嘴巴
+          face_features: foundArr[6], // 臉上特徵
+          beard: foundArr[7], // 鬍子
+          clothes: foundArr[8], // 一般衣服(上半身)
+          wristband: foundArr[9], // 手套
+          coat: foundArr[10], // 外套大衣
+          belt: foundArr[11], // 皮帶(下半身)
+          pants: foundArr[12], // 褲子
+          socks: foundArr[13], // 襪子
+          shoes: foundArr[14], // 鞋子
+          glasses: foundArr[15], // 眼鏡
+          earing: foundArr[16], // 耳環
+          necklace: foundArr[17], // 項鍊
+          body_features: foundArr[18], // 其他配件
+          head_features: foundArr[19] // 頭飾
+        }
+        this.sticker = Object.assign({}, this.sticker, Arr)
         this.doll.drawDoll()
       },
       pushSavedSticker() {
         let canvasDOM = document.getElementById('doll_canvas')
         let data = canvasDOM.toDataURL('image/png')
-        let code2 = []
+        let code = ''
         for (let i in this.sticker) {
-          let val = this.sticker[i].substr(5)
+          let val = this.sticker[i]
           if (val === '') {
-            code2.push('000000000')
+            // val = parseInt('1111').toString(16)
+            val = '0000'
+            code = code.concat(val)
           } else {
-            code2.push(val)
+            val = this.sticker[i].substr(10)
+            // val = parseInt(val.replace('_', '')).toString(16)
+            // if (val.length < 3) {
+            //   val = '0' + val
+            // }
+            val = val.replace('_', '')
+            code = code.concat(val)
           }
         }
-        console.log(code2)
+        console.log('code', code, code.length)
         this.savedSticker.push({
           base64Img: data,
           sticker: JSON.parse(JSON.stringify(this.sticker)),
-          code: btoa(JSON.stringify(this.sticker)),
-          code2: code2
+          code: code
         })
       },
       saveDollSticker() {
