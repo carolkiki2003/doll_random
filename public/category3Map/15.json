@@ -58,7 +58,7 @@
     "mediumType": "15",
     "item": "1500005",
     "permission": 0,
-    "color": [{ "id": "01" }, { "id": "37" }, { "id": "45" }],
+    "color": [{ "id": "01" }, { "id": "02" }, { "id": "37" }, { "id": "45" }],
     "layer": [{ "id": "19" }],
     "name": null
   },

@@ -40,7 +40,7 @@
     "mediumType": "19",
     "item": "1900004",
     "permission": 0,
-    "color": [{ "id": "35" }],
+    "color": [{ "id": "08" }, { "id": "43" }],
     "layer": [{ "id": "13" }],
     "name": null
   },

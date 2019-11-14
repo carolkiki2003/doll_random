@@ -31,7 +31,7 @@
     "mediumType": "16",
     "item": "1600003",
     "permission": 0,
-    "color": [{ "id": "01" }],
+    "color": [{ "id": "01" }, { "id": "45" }],
     "layer": [{ "id": "03" }],
     "name": null
   },
