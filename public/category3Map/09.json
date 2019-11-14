@@ -238,7 +238,7 @@
     "mediumType": "09",
     "item": "0900026",
     "permission": 0,
-    "color": [{ "id": "38" }],
+    "color": [{ "id": "49" }],
     "layer": [{ "id": "18" }],
     "name": null
   },
@@ -256,7 +256,7 @@
     "mediumType": "09",
     "item": "0900028",
     "permission": 0,
-    "color": [{ "id": "35" }],
+    "color": [{ "id": "34" }],
     "layer": [{ "id": "18" }],
     "name": null
   },
@@ -274,7 +274,7 @@
     "mediumType": "09",
     "item": "0900030",
     "permission": 0,
-    "color": [{ "id": "38" }],
+    "color": [{ "id": "49" }],
     "layer": [{ "id": "18" }],
     "name": null
   },
