@@ -1,12 +1,30 @@
 <div id="pg_root">
   <Header></Header>
   <div class="decoder">
-      <p>貼上你的sticker碼</p><a @click="sendCode">送出</a>
-      <textarea v-model="decodeText"></textarea>
-   </div>
-  <div v-if="messagetext"class="message2" >{{messagetext}},要不要去<a href="https://star.104.com.tw/trip" target="_blank">時光機</a>探索看看!</div>
-  <div v-if="!messagetext"class="message2" >歡迎來到Star試衣間，快來創造出屬於你獨一無二的造型吧！</div>
-  <TripDollEditContainer @message="message" :decodeText="decodeText" ref="changeSticker"></TripDollEditContainer>
+    <p>貼上你的sticker碼</p><a @click="sendCode">送出</a>
+    <textarea v-model="decodeText"></textarea>
+    <p
+      :stickerErrMsg="stickerErrMsg"
+      v-if="stickerErr"
+      class="stickerErr"
+    >您輸入sticker碼錯誤，請再重新確認</p>
+  </div>
+  <div
+    v-if="messagetext"
+    class="message2"
+  >{{messagetext}},要不要去<a
+      href="https://star.104.com.tw/trip"
+      target="_blank"
+    >時光機</a>探索看看!</div>
+  <div
+    v-else
+    class="message2"
+  >歡迎來到Star試衣間，快來創造出屬於你獨一無二的造型吧！</div>
+  <TripDollEditContainer
+    @message="message"
+    :decodeText="decodeText"
+    ref="changeSticker"
+  ></TripDollEditContainer>
   <router-view />
   <Footer></Footer>
 </div>

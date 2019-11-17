@@ -224,47 +224,53 @@
       sendCodeChild() {
         let decode = []
         let foundArr = []
-
         //去除字串引號
-        let text = this.decodeText.replace(/^\"|\"$/g, '')
-        //字串拆解4個數字一組
-        for (let i = 0; i < 80; i = i + 4) {
-          decode.push(text.substr(i, 4))
-        }
-        //利用4個數字在all.json找出對應sticker
-        for (let i = 0; i < 20; i++) {
-          let found = ''
-          if (decode[i] === '0000') {
-            foundArr[i] = ''
-          } else {
-            foundArr[i] = all[i].child.find(el => el.substr(10).replace('_', '') === decode[i])
+        // let text = this.decodeText.replace(/^\"|\"$/g, '')
+        console.log(this.decodeText)
+        if (this.decodeText.match(/^\d{80}$/)) {
+          console.log('!!')
+          //字串拆解4個數字一組
+          for (let i = 0; i < 80; i = i + 4) {
+            decode.push(this.decodeText.substr(i, 4))
           }
+          //利用4個數字在all.json找出對應sticker
+          for (let i = 0; i < 20; i++) {
+            let found = ''
+            if (decode[i] === '0000') {
+              foundArr[i] = ''
+            } else {
+              foundArr[i] = all[i].child.find(el => el.substr(10).replace('_', '') === decode[i])
+            }
+          }
+          //對應sticker
+          let Arr = {
+            hair: foundArr[0], // 髮型
+            face: foundArr[1], // 臉(含耳朵)
+            eyebrow: foundArr[2], // 眉毛
+            eye: foundArr[3], // 眼睛
+            nose: foundArr[4], // 鼻子
+            mouth: foundArr[5], // 嘴巴
+            face_features: foundArr[6], // 臉上特徵
+            beard: foundArr[7], // 鬍子
+            clothes: foundArr[8], // 一般衣服(上半身)
+            wristband: foundArr[9], // 手套
+            coat: foundArr[10], // 外套大衣
+            belt: foundArr[11], // 皮帶(下半身)
+            pants: foundArr[12], // 褲子
+            socks: foundArr[13], // 襪子
+            shoes: foundArr[14], // 鞋子
+            glasses: foundArr[15], // 眼鏡
+            earing: foundArr[16], // 耳環
+            necklace: foundArr[17], // 項鍊
+            body_features: foundArr[18], // 其他配件
+            head_features: foundArr[19] // 頭飾
+          }
+          this.sticker = Object.assign({}, this.sticker, Arr)
+          this.doll.drawDoll()
+        } else {
+          this.$emit('stickerErrMsg')
+          console.log('sticker is error')
         }
-        //對應sticker
-        let Arr = {
-          hair: foundArr[0], // 髮型
-          face: foundArr[1], // 臉(含耳朵)
-          eyebrow: foundArr[2], // 眉毛
-          eye: foundArr[3], // 眼睛
-          nose: foundArr[4], // 鼻子
-          mouth: foundArr[5], // 嘴巴
-          face_features: foundArr[6], // 臉上特徵
-          beard: foundArr[7], // 鬍子
-          clothes: foundArr[8], // 一般衣服(上半身)
-          wristband: foundArr[9], // 手套
-          coat: foundArr[10], // 外套大衣
-          belt: foundArr[11], // 皮帶(下半身)
-          pants: foundArr[12], // 褲子
-          socks: foundArr[13], // 襪子
-          shoes: foundArr[14], // 鞋子
-          glasses: foundArr[15], // 眼鏡
-          earing: foundArr[16], // 耳環
-          necklace: foundArr[17], // 項鍊
-          body_features: foundArr[18], // 其他配件
-          head_features: foundArr[19] // 頭飾
-        }
-        this.sticker = Object.assign({}, this.sticker, Arr)
-        this.doll.drawDoll()
       },
       pushSavedSticker() {
         let canvasDOM = document.getElementById('doll_canvas')

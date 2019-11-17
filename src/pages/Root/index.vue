@@ -13,13 +13,18 @@
     data() {
       return {
         messagetext: '',
-        decodeText: ''
+        decodeText: '',
+        stickerErr: false
       }
     },
     methods: {
       sendCode() {
         this.$refs.changeSticker.sendCodeChild()
         this.decodeText = ''
+      },
+      stickerErrMsg() {
+        console.log('rrr')
+        this.stickerErr = true
       },
       message(messagetext) {
         this.messagetext = messagetext
