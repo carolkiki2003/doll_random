@@ -22,9 +22,11 @@
         this.$refs.changeSticker.sendCodeChild()
         this.decodeText = ''
       },
-      stickerErrMsg() {
-        console.log('rrr')
-        this.stickerErr = true
+      stickerErrMsg(Err) {
+        this.stickerErr = Err
+        if(this.stickerErr){
+          console.log('This sticker is wrong')
+        }
       },
       message(messagetext) {
         this.messagetext = messagetext

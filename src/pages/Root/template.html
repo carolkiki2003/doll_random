@@ -4,7 +4,6 @@
     <p>貼上你的sticker碼</p><a @click="sendCode">送出</a>
     <textarea v-model="decodeText"></textarea>
     <p
-      :stickerErrMsg="stickerErrMsg"
       v-if="stickerErr"
       class="stickerErr"
     >您輸入sticker碼錯誤，請再重新確認</p>
@@ -21,6 +20,7 @@
     class="message2"
   >歡迎來到Star試衣間，快來創造出屬於你獨一無二的造型吧！</div>
   <TripDollEditContainer
+   @stickerErrMsg="stickerErrMsg"
     @message="message"
     :decodeText="decodeText"
     ref="changeSticker"

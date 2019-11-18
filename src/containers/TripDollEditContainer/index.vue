@@ -144,7 +144,8 @@
         canvasScale: 0.8,
         canvasMaxSize: 960,
         messagetext: '',
-        thumbnailUp: false
+        thumbnailUp: false,
+        stickerErr: false
       }
     },
     props: {
@@ -215,20 +216,12 @@
       })
     },
     methods: {
-      // sendCodeChild() {
-      //   let decode = this.decodeText.replace(/^\"|\"$/g, '')
-      //   let newDecodeText = JSON.parse(atob(decode))
-      //   this.sticker = Object.assign({}, this.sticker, newDecodeText)
-      //   this.doll.drawDoll()
-      // },
       sendCodeChild() {
         let decode = []
         let foundArr = []
         //去除字串引號
         // let text = this.decodeText.replace(/^\"|\"$/g, '')
-        console.log(this.decodeText)
         if (this.decodeText.match(/^\d{80}$/)) {
-          console.log('!!')
           //字串拆解4個數字一組
           for (let i = 0; i < 80; i = i + 4) {
             decode.push(this.decodeText.substr(i, 4))
@@ -266,10 +259,12 @@
             head_features: foundArr[19] // 頭飾
           }
           this.sticker = Object.assign({}, this.sticker, Arr)
+          this.stickerErr=false
+          this.$emit('stickerErrMsg',this.stickerErr)
           this.doll.drawDoll()
         } else {
-          this.$emit('stickerErrMsg')
-          console.log('sticker is error')
+         this.stickerErr=true
+        this.$emit('stickerErrMsg',this.stickerErr)
         }
       },
       pushSavedSticker() {
@@ -296,7 +291,8 @@
         this.savedSticker.push({
           base64Img: data,
           sticker: JSON.parse(JSON.stringify(this.sticker)),
-          code: code
+          code: code,
+          date:new Date().getMilliseconds()
         })
       },
       saveDollSticker() {
@@ -308,6 +304,8 @@
       },
       setThumbnailIdx(sticker) {
         this.sticker = Object.assign({}, this.sticker, sticker)
+        this.stickerErr=false
+        this.$emit('stickerErrMsg',this.stickerErr)
         this.doll.drawDoll()
       },
       messageRandom(messagetext) {
@@ -382,6 +380,8 @@
         let found = category2.find(el => el.id === category2Id)
         // 找到對應的資料
         if (found && found.id) {
+          this.stickerErr=false
+          this.$emit('stickerErrMsg',this.stickerErr)
           let value = this.getDollValueMap(found.id)
           if (value) {
             // 觸發 TripDoll 重繪
@@ -402,7 +402,11 @@
       resetSticker() {
         this.sticker = Object.assign({}, this.sticker)
         this.clearKeepSticker()
-        if (this.doll) this.doll.drawDoll()
+        if (this.doll) {
+        this.stickerErr=false
+        this.$emit('stickerErrMsg',this.stickerErr)
+        this.doll.drawDoll()
+        }
       },
       setRandom() {
         let start = null
@@ -437,6 +441,8 @@
           async
           this.sticker[prop] = found.child[a].trim()
         }
+        this.stickerErr=false
+        this.$emit('stickerErrMsg',this.stickerErr)
         this.doll.drawDoll()
       },
       clearKeepSticker() {

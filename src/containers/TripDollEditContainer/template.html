@@ -26,7 +26,7 @@
           <a
             href="javascript:;"
             v-for="(item,index) in savedSticker"
-            :key="item.code"
+            :key="item.date"
             @click="setThumbnailIdx(item.sticker)"
           >
             <img :src="item.base64Img" alt="" />
