@@ -12,7 +12,7 @@
     "copy-webpack-plugin": "^5.0.5",
     "core-js": "^3.3.2",
     "phaser": "^3.20.1",
-    "serialize-javascript": "^2.1.1",
+    "serialize-javascript": "^3.1.0",
     "susy": "^3.0.5",
     "terser-webpack-plugin": "^2.2.2",
     "vue": "^2.6.10",
